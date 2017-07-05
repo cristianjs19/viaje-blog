@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load staticfiles %}  
+
+{% block content %}
+
+<style type="text/css">
+  header nav ul li:nth-of-type(2) a {
+ padding-bottom:5px;
+}
+</style>
+
+  <!-- /#gallery -->
+  <div class="main-box">
+    <div class="container">
+      <div class="inside">
+        <div class="wrapper">
+        	<!-- aside -->
+          <aside>
+            <h2>Nuestro <span>Viaje</span></h2>
+            <div class="img-box">
+            	<figure><img src="{% static "images/img1.jpg" %}" alt=""></figure>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam.
+            </div>
+            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi.</p> 
+            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.
+          </aside>
+          <!-- content -->
+          <section id="content">
+            <article>
+            	<h2>Quienes<span> Viajamos</span></h2>
+              <!-- .team-list -->
+              <ul class="team-list">
+              	<li>
+                	<figure><img src="{% static "images/img2.jpg" %}" alt=""></figure>
+                  <h3><a href="#">Aye Poledri</a></h3>
+                  He is the most important member of your team. Usually this is the person who started the website. Maybe it is worth to write why he has made such a decision and what has inspired him <a href="#">...</a>
+                </li>
+                <li>
+                	<figure><img src="{% static "images/img3.jpg" %}" alt=""></figure>
+                  <h3><a href="#">Lucas Brinach</a></h3>
+                  We are completly lost on what he's responsible for, but we hope that you know it. We also hope that you will tell it to the rest of the world including us by placing some real text here <a href="#">...</a>
+                </li>
+                <li>
+                	<figure><img src="{% static "images/img4.jpg" %}" alt=""></figure>
+                  <h3><a href="#">Alanita</a></h3>
+                  We are completly lost on what he's responsible for, but we hope that you know it. We also hope that you will tell it to the rest of the world including us by placing some real text here <a href="#">...</a>
+                </li>
+              </ul>
+              <!-- /.team-list -->
+            </article> 
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  
+  <script type="text/javascript"> Cufon.now(); </script>
+</body>
+</html>
+{% endblock content %}

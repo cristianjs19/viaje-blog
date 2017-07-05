@@ -1,0 +1,49 @@
+{% extends 'album/base1.html' %}
+{% load static %}
+
+{% block section %}
+    <h2>Category</h2>
+    <hr>
+{% endblock section %}
+
+{% block content %}
+ 
+<section class="ima">
+  <img src="{% static "images/imgasd.png" %}" alt="">
+</section>
+
+{% endblock content %}
+
+{% block maincontent %}
+
+  <div class="main-post">
+    <div class="content-post">
+        {% for c in object_list %}
+            <a href="{% url 'category-detail' c.pk %}">
+                {{ c.name }}
+            </a>
+            
+           
+        {% endfor %}
+        <div class="post">
+            <p>photo: {{ photo|title }}</p>
+        </div>
+        <img src="{{ p.photo.url }}" style="width:200px;height:200px"/>
+        <div class="post">
+            {% for p in object.photo_list.all %}
+                    
+                        <div class="post">{{ p.title }}</div>
+                        <div class="post">
+                            <a href="{% url "photo-detail" p.id %}">
+                                <img src="{{ p.photo.url }}" style="width:200px;height:200px"/>
+                            </a>
+                        </div>
+                    
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"> Cufon.now(); </script>
+{% endblock maincontent %}
+

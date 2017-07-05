@@ -1,0 +1,61 @@
+ {% load staticfiles %}
+
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+  <title>VPLT-2017</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="icon" sizes="36x36" href="{% static 'images/favicon1.png' %}" type="image/png">
+  <link rel="stylesheet" href="{% static 'css/style1.css' %}" type="text/css" media="all">
+  <script type="text/javascript" src="{% static 'js/jquery-1.4.2.min.js' %}" ></script>
+  <script type="text/javascript" src="{% static 'js/roundabout.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/roundabout_shapes.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/gallery_init.js' %}"></script>
+  <script src="https://use.fontawesome.com/d120c7e072.js"></script>
+</head>
+
+<body >
+ <!-- header -->
+  <header>
+    <div class="container header-cont">
+      <h1><a href="{% url 'inicio' %}">Viajando Por La Tierra</a></h1>
+      <div class="head-img">    
+        <img src="{% static 'images/asd.png' %}" alt="">
+      </div>
+      <div class="nav"> 
+        <nav>
+          <ul>
+            <li><a href="{% url 'inicio' %}">Nosotros</a></li>
+            <li><a href="{% url 'viaje' %}">El Viaje</a></li>
+            <li><a href="/album/category">Galería</a></li>
+            <li><a href="{% url 'contacto' %}">Contacto</a></li>
+            <li><a href="{% url 'colabora' %}">Colabora</a></li>
+            <!-- <li><a href="{% url "nosotros" %}">Nosotros</a></li> -->
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- Main -->
+    
+  <!-- <div class="main-box"> -->
+      
+      {% block content %}
+      {% endblock content %}
+      
+ <!--  </div> -->
+
+{% block footer %}
+  <footer>
+    <div class="container">
+      <div class="wrapper">
+          <div class="fleft">Copyright - VPLT 2017  ©</div>
+            
+      </div>
+    </div>
+  </footer>
+{% endblock %}
+
+</body>
+</html>

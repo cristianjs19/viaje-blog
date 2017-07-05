@@ -1,0 +1,12 @@
+*.pyc
+
+planilla-trabajo.txt
+terminaciones back-end.txt
+
+my_album/
+
+/viaj/*.pyc
+viaj/staticfiles/
+
+
+db.sqlite3

@@ -1,0 +1,29 @@
+{% extends 'album/base1.html' %}
+{% load static %}
+
+
+{% block section %}
+    <h2>
+        {{ object.title }}
+        {% if object.favorite %}
+            &#9733;
+        {% else %}
+            &#9734;
+        {% endif %}
+        {% if object.category_id %}
+            ( <a href="{% url "category-detail" object.category_id %}">{{ object.category }}</a> )
+        {% endif %}
+    </h2>
+    <p><strong>comments: </strong>{{ object.comment|default:"no comments" }}</p>
+    <a href="{% url "photo-update" object.id %}">edit</a>
+    <a href="{% url "photo-delete" object.id %}">delete</a>
+    <hr>
+{% endblock section %}
+
+{% block maincontent %}
+<div>
+    <div>
+        <img src="{{ p.photo.url }}" style="width:550px;height:420px"/>
+    </div>
+</div>
+{% endblock maincontent %}

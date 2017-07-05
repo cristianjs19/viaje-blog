@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load staticfiles %} 
+{% load i18n %} 
+
+{% block content %}
+<style type="text/css">
+  header nav ul li:nth-of-type(4) a {
+    padding-bottom:5px;
+  }
+
+  .asd {
+    font-size: 1em;
+    text-align:center;
+  }
+</style>
+  
+  <!-- /#gallery -->
+  <div class="main-box">
+    <div><p class="asd">AQUÍ VAN FOTOS,PUEDEN CATEGORIZARSE EN SECCIONES O APARECER EN PRIMER PLANO SIN MAS...</p></div>
+     <div class="row col-lg-12">
+        <h1 class="page-header">{% trans "Latest photo galleries" %}</h1>
+    </div>
+
+  <div class="row">
+  
+    <aside class="col-md-2">
+
+      <h4>{% trans "Filter by year" %}</h4>
+      <ul>
+      {% for date in date_list %}
+        <li><a href="{% url 'photologue:pl-gallery-archive-year' date.year %}">{{ date|date:"Y" }}</a></li>
+      {% endfor %}
+      </ul>
+
+    </aside>
+
+    <main class="col-md-10">
+      
+      {% if latest %}
+          {% for gallery in latest %}
+            {% include "photologue/includes/gallery_sample.html" %}
+          {% endfor %}
+      {% else %}
+          <p>{% trans "No galleries were found" %}.</p>
+      {% endif %}
+      
+    </main>
+
+  </div>
+</html>
+{% endblock content %}

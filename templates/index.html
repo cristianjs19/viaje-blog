@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load staticfiles %}	
+
+{% block content %}
+<style type="text/css">
+  header nav ul li:nth-of-type(1) a {
+    padding-bottom:5px;
+}
+</style>
+
+<!-- #gallery -->
+  <section>
+    <div class="container asd">
+      <div class="gallery roundabout-holder">
+        <ul id="myRoundabout">
+          <li><img src="{% static 'images/as3.jpg' %}" alt=""></li>
+          <li><img src="{% static 'images/as2.jpg' %}" alt=""></li>
+          <li><img src="{% static 'images/as1.jpg' %}" alt=""></li>
+          <li><img src="{% static 'images/as4.jpg' %}" alt=""></li>
+          <li><img src="{% static 'images/as5.jpg' %}" alt=""></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+<!-- /#gallery -->
+
+  <!-- mainbox -->
+  <main> 
+    
+    <div class="cont-main">
+      <!-- aside -->
+        <div class="aside">
+          <aside>
+              <div class="posteos">
+                <h2>POSTEOS</h2>
+              </div>
+              <!-- .news -->
+              <ul class="news">
+                <li>
+                  <figure><strong>22</strong>June</figure>
+                  <h3><a href="#">Ushuaia</a></h3>
+                  Domnis iste natus error <a href="#">...</a>
+                </li>
+                <li>
+                  <figure><strong>09</strong>June</figure>
+                  <h3><a href="#">Futaleufu</a></h3>
+                  Eaqueipsa quae abillo invent<a href="#">...</a>
+                </li>
+                <li>
+                  <figure><strong>31</strong>May</figure>
+                  <h3><a href="#">El calafaye</a></h3>
+                  Architecto beatae vitae<a href="#">...</a>
+                </li>
+                <li>
+                  <figure><strong>25</strong>May</figure>
+                  <h3><a href="#">Tecka</a></h3>
+                  Voluptatem quia voluptas<a href="#">...</a>
+                </li>
+              </ul>
+          </aside>
+        </div>
+      <!-- content -->
+        <section class="content">
+            <article>
+              <h2>¡Bienvenidos a nuestro viaje, <span>súbanse que hay lugar!</span></h2><br><br>
+      
+              <p>Les damos la bienvenida a este viaje y elección de vida que desde hacía mucho tiempo era un sueño en nuestras vidas poder concretar y que desde enero del 2016 felizmente podemos decir que pasó a ser nuestro dia a dia y nuestra realidad.</p><br>
+              
+              <p>  Somos la familia Brinach, formados por Lucas, Ayelen y nuestra hija Alana quienes decidimos patear el tablero de lo establecido y tener que dejar de esperar hasta enero para poder disfrutar de esta que es nuestra pasión en la vida, viajar, conocer personas maravillosas que donde quiera que vayamos nos reciben con brazos abriertos de par en par, poder conocer a fondo un lugar, su cultura, su gente, sus costumbres, acotados únicamente por nuestro gusto de pasar a conocer el siguiente destino.</p><br>
+      
+            <img src="{% static "images/ban1.jpg" %}" alt=""><br>
+      
+             <p>Desde siempre fué nuestro deseo poder emprender este viaje y elección de vida también, y a principios del 2015 sin saber cuando ni como de a poco empezamos a poner nuestra intención en ello para que poco a poco este sueño pasara a ser una realidad [deshacerse de pertenencias, planificar detalles,comprar trafic, prepararla]. Así fué como en enero del 2016 teníamos todo, lo necesario, emociones y un poquito de miedo inclusive para dar el salto al vacío y dejar todo atrás.</p> <br>
+      
+              <p>Alaska fúe la meta que nos planteamos, aunque sin apuro por ella, vivir el dia a dia y lo que el camino nos trae es nuestra prioridad. Partimos de la comarca andina del paralelo 42, nuestra última base fija, hacia el sur de la patagonia; llegar al fin del mundo, el punto mas austral del planeta era nuestro primer objetivo en esta gran travesía. Para luego no tener mas opción que subir y subir, al ritmo que elegimos y también al que la vida nos invita a llevar.</p> <br>
+      
+              <p>Les agradecemos de corazón por todo el apoyo que recibimos a diario ya sea con sus palabras de aliento, ser uno de los tantos ángeles que nos da una mano a lo largo del camino o por sumarse y estar presente en esta escuela de vida y travesía continental que día a día nos trae una aventura, un desafío, un hermano y un paisaje mas.</p>
+              
+            </article> 
+        </section>
+    </div>
+  </main>
+
+  
+
+  <script type="text/javascript"> Cufon.now(); </script>
+</body>
+</html>
+{% endblock content %}

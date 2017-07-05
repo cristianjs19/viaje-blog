@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load staticfiles %} 
+
+{% block content %}
+<style type="text/css">
+  header nav ul li:nth-of-type(3) a {
+    padding-bottom:5px;
+}
+</style>
+
+  <!-- /#gallery -->
+  <div class="main-box">
+    <div class="container">
+      <div class="inside">
+        <h2><a href="{% url "viaje" %}">Sección</a><span>Posts</span></h2>
+        <div class="post">
+            {% if post.published_date %}
+                <div class="date">
+                    {{ post.published_date }}
+                </div>
+            {% endif %}
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.text2|safe|linebreaksbr}}</p>    
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <script type="text/javascript"> Cufon.now(); </script>
+</body>
+</html>
+{% endblock content %}

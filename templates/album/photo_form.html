@@ -1,0 +1,10 @@
+{% extends 'album/base1.html' %}
+{% load static %}
+
+{% block maincontent %}
+    <form enctype="multipart/form-data" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+        <a class='btn' href="{% url 'photo-list' %}">Cancel</a>
+    </form>
+{% endblock maincontent%}
