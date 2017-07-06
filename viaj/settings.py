@@ -22,17 +22,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+SECRET_KEY = 'bet^9tforrk&!q@xa+5&xv#i^cb$hw7kyj+r9w3xs*%fg3pbgl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 ALLOWED_HOSTS = [
     u'*'
-    # u'hidden-plains-56770.herokuapp.com',
-    # u'127.0.0.1',
-    # u'viajandoporlatierra.tk',
-    # u'www.viajandoporlatierra.tk',
 ]
 
 
@@ -92,6 +88,8 @@ WSGI_APPLICATION = 'viaj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+#Postgresql custom DB config:
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -102,6 +100,7 @@ DATABASES = {
         'PORT': 5432,
     }
 }
+
 
 # DATABASES = {
 #     'default': {
@@ -146,6 +145,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+# MEDIA & STATIC configs for locally run
+
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 STATIC_URL = '/static/'
@@ -170,8 +171,8 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-# S3 configs:
-# https://github.com/codingforentrepreneurs/Guides/blob/master/all/s3_staticfiles_django.md
+AWS S3 MEDIA & STATIC configs:
+https://github.com/codingforentrepreneurs/Guides/blob/master/all/s3_staticfiles_django.md
 
 AWS_ACCESS_KEY_ID = os.environ.get('S3_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('S3_SECRET_KEY')

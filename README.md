@@ -1,3 +1,16 @@
-blog-app con Django==1.10.6 y Python==2.7.12
+blog-app with Django==1.10.6 and Python==2.7.12
 
-:nerd: :nerd: :nerd:
+:octocat: :octocat:
+
+To run locally:
+
+in settings.py set:
+-DEBUG = True
+
+-comment all AWS S3 MEDIA & STATIC configs
+
+-uncomment MEDIA_URL and MEDIA_ROOT (locally run)
+
+-disable custom database config.
+
+
