@@ -1,8 +1,13 @@
 from django.shortcuts import render
+
 from django.template import RequestContext
+from django.utils import timezone
+
+from crea_post.models import Post
 
 def home_page(request):
-	return render(request,'index.html',{})
+	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')[:5]
+	return render(request,'index.html',{'posts': posts})
 
 def nosotros(request):
 	return render(request,'nosotros.html',{})

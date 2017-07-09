@@ -1,6 +1,12 @@
 from django.contrib import admin
 from django.db import models
-from .models import Post, Categoria, Photo
+from .models import (
+	SubCategoria,
+	Categoria,
+	Countries,
+	Photo,
+	Post
+	)
 from markdownx.admin import MarkdownxModelAdmin
 from markdownx.widgets import AdminMarkdownxWidget
 from markdownx.models import MarkdownxField
@@ -12,6 +18,32 @@ from markdownx.models import MarkdownxField
 #     }
 
 # admin.site.register(Post, PostAdmin, )
-admin.site.register(Post,MarkdownxModelAdmin,)
-admin.site.register(Categoria,)
-admin.site.register(Photo,)
+
+# class PhotoInline(admin.StackedInline):
+#     model = Photo
+#     can_delete = False
+#     verbose_name_plural = 'employee'
+
+class SubCategoriaInline(admin.TabularInline):
+    model = SubCategoria
+
+class CategoriaAdmin(admin.ModelAdmin):
+    inlines = [
+        SubCategoriaInline,
+    ]
+
+# class CategoriaInline(admin.TabularInline):
+#     model = Categoria
+
+# class PostAdmin(admin.ModelAdmin):
+# 	list_display = ('title', 'author', 'country', 'published_date')
+# 	inlines = [
+# 		CategoriaInline
+# 	]
+
+
+admin.site.register(Post, MarkdownxModelAdmin)     # (Post,PostAdmin)
+admin.site.register(Categoria, CategoriaAdmin)
+admin.site.register(Photo)
+admin.site.register(Countries)
+# admin.site.register(SubCategoria)
