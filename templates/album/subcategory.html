@@ -1,0 +1,22 @@
+{% extends 'album/base1.html' %}
+{% load static %}
+
+
+
+{% block maincontent %}
+<div class="main-post">
+    <div class="content-post">
+        {% if subCategorySet %}
+            {% for subCategory in subCategorySet %}
+                <div class="post" style="border: 1px solid; padding: 10px;">
+                  <a href="/album/subcategory/{{ subCategory.id }}/"><p>{{ subCategory.title }}</p><a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="post" style="border: 1px solid; padding: 10px;">
+              No sub categories available
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock maincontent %}

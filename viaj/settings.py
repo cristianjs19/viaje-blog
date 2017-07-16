@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'bet^9tforrk&!q@xa+5&xv#i^cb$hw7kyj+r9w3xs*%fg3pbgl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     u'*'
@@ -90,24 +90,24 @@ WSGI_APPLICATION = 'viaj.wsgi.application'
 
 #Postgresql custom DB config:
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'viaje1',
-        'USER': 'cristian',
-        'PASSWORD': 'cristian',
-        'HOST': 'localhost',
-        'PORT': 5432,
-    }
-}
-
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'viaje1',
+#         'USER': 'cristian',
+#         'PASSWORD': 'cristian',
+#         'HOST': 'localhost',
+#         'PORT': 5432,
 #     }
 # }
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -167,30 +167,30 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 # STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 
-# Update database configuration with $DATABASE_URL.
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+# # Update database configuration with $DATABASE_URL.
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
 
-AWS S3 MEDIA & STATIC configs:
-https://github.com/codingforentrepreneurs/Guides/blob/master/all/s3_staticfiles_django.md
+# AWS S3 MEDIA & STATIC configs:
+# https://github.com/codingforentrepreneurs/Guides/blob/master/all/s3_staticfiles_django.md
 
-AWS_ACCESS_KEY_ID = os.environ.get('S3_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('S3_SECRET_KEY')
+# AWS_ACCESS_KEY_ID = os.environ.get('S3_KEY_ID')
+# AWS_SECRET_ACCESS_KEY = os.environ.get('S3_SECRET_KEY')
 
 
-AWS_FILE_EXPIRE = 200
-AWS_PRELOAD_METADATA = True
-AWS_QUERYSTRING_AUTH = True
+# AWS_FILE_EXPIRE = 200
+# AWS_PRELOAD_METADATA = True
+# AWS_QUERYSTRING_AUTH = True
 
-DEFAULT_FILE_STORAGE = 'viaj.utils.MediaRootS3BotoStorage'
-STATICFILES_STORAGE = 'viaj.utils.StaticRootS3BotoStorage'
-AWS_STORAGE_BUCKET_NAME = 'cjs19-bucket'
-S3DIRECT_REGION = 'sa-east-1'
-S3_URL = '//%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
-MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
-MEDIA_ROOT = MEDIA_URL
-# STATIC_URL = S3_URL + 'static/'
-ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+# DEFAULT_FILE_STORAGE = 'viaj.utils.MediaRootS3BotoStorage'
+# STATICFILES_STORAGE = 'viaj.utils.StaticRootS3BotoStorage'
+# AWS_STORAGE_BUCKET_NAME = 'cjs19-bucket'
+# S3DIRECT_REGION = 'sa-east-1'
+# S3_URL = '//%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+# MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
+# MEDIA_ROOT = MEDIA_URL
+# # STATIC_URL = S3_URL + 'static/'
+# ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 import datetime
 
@@ -198,8 +198,11 @@ two_months = datetime.timedelta(days=61)
 date_two_months_later = datetime.date.today() + two_months
 expires = date_two_months_later.strftime("%A, %d %B %Y 20:00:00 GMT")
 
-AWS_HEADERS = { 
-    'Expires': expires,
-    'Cache-Control': 'max-age=%d' % (int(two_months.total_seconds()), ),
-}
+MEDIA_URL = '/images/'
+MEDIA_ROOT = 'images'
+
+# AWS_HEADERS = { 
+#     'Expires': expires,
+#     'Cache-Control': 'max-age=%d' % (int(two_months.total_seconds()), ),
+# }
 

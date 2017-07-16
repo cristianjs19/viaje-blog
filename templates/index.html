@@ -42,8 +42,8 @@
                       
                       <figure><strong>{{ post.published_date|date:"d" }}</strong>
                       {{ post.published_date|date:"M" }}</figure>
-                      <h3><a href="post_ver/{{ post.id }}/">{{ post.title }}</a></h3>
-                      {{ post.vprevia|slice:"10" }}<a href="post_ver/{{ post.id }}/">...</a>
+                      <h3><a href="/post_ver/{{ post.id }}/">{{ post.title }}</a></h3>
+                      {{ post.vprevia|slice:"10" }}<a href="/post_ver/{{ post.id }}/">...</a>
                     </li>
                   {% endfor %}
                 {% else %}

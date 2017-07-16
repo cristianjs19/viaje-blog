@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from album.models import Category, Photo
+from django.shortcuts import render, get_object_or_404
+from album.models import Category, Photos, Gallery, SubCategory, ChildSubCategory
 from django.views.generic import ListView, DetailView
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
@@ -25,37 +25,110 @@ def base(request):
     return render(request, 'base1.html')
 
 
-class CategoryListView(ListView):
-    model = Category
-    #template_name = 'category.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(CategoryListView, self).get_context_data(**kwargs)
-        # q = Photo.objects.get(pk=1)
-        context['photo'] = Photo.objects.first()
-        return context
+def CategoryListView(request):
+    categorySet = Category.objects.all()
+    context = {
+        'categorySet': categorySet
+    }
+    return render(request,'album/category.html', context)
 
 
-class CategoryDetailView(DetailView):
-    model = Category
+def subCategoryView(request, pk):
+    category = get_object_or_404(Category, pk=pk)
+
+    if category.has_category:
+        subCategorySet = SubCategory.objects.filter(category=category)
+
+        context = {
+            'subCategorySet': subCategorySet
+        }
+        return render(request,'album/subcategory.html',context)
+    else:
+        gallerySet = Gallery.objects.filter(category=category)
+        galleryData = []
+        for gallery in gallerySet:
+            lastPhoto = Photos.objects.filter(gallery=gallery).order_by('-id')
+            galleryData.append({
+                    'gallery_id':gallery.id,
+                    'lastPhoto': lastPhoto[0].photo.url if lastPhoto else None,
+                    'title': gallery.title
+                })
+
+        context = {
+            'gallerySet': galleryData
+        }
+        return render(request,'album/gallery.html',context)
 
 
-class PhotoListView(ListView):
-    model = Photo
+
+def ChildSubCategoryView(request, pk):
+    subCategory = get_object_or_404(SubCategory, pk=pk)
+
+    if subCategory.has_category:
+        childSubCategorySet = ChildSubCategory.objects.filter(sub_category=subCategory)
+
+        context = {
+            'childSubCategorySet': childSubCategorySet
+        }
+        return render(request,'album/childsubcategory.html',context)
+    else:
+        gallerySet = Gallery.objects.filter(sub_category=subCategory)
+        galleryData = []
+        for gallery in gallerySet:
+            lastPhoto = Photos.objects.filter(gallery=gallery).order_by('-id')
+            galleryData.append({
+                    'gallery_id':gallery.id,
+                    'lastPhoto': lastPhoto[0].photo.url if lastPhoto else None,
+                    'title': gallery.title
+                })
+
+        context = {
+            'gallerySet': galleryData
+        }
+        return render(request,'album/gallery.html',context)
+
+def galleryView(request, pk):
+    childSubCategory = get_object_or_404(ChildSubCategory, pk=pk)
+
+    gallerySet = Gallery.objects.filter(child_sub_category=childSubCategory)
+    galleryData = []
+    for gallery in gallerySet:
+        lastPhoto = Photos.objects.filter(gallery=gallery).order_by('-id')
+        galleryData.append({
+                'gallery_id':gallery.id,
+                'lastPhoto': lastPhoto[0].photo.url if lastPhoto else None,
+                'title': gallery.title
+            })
+
+    context = {
+        'gallerySet': galleryData
+    }
+    return render(request,'album/gallery.html',context)
 
 
-class PhotoDetailView(DetailView):
-    model = Photo
+def galleryDetailView(request, pk):
+    gallery = get_object_or_404(Gallery, pk=pk)
+
+    photoSet = Photos.objects.filter(gallery=gallery)
+
+    context = {
+        'photoSet': photoSet
+    }
+
+    return render(request,'album/photos.html', context)
+
+# class PhotoDetailView(DetailView):
+#     model = Photos
 
 
-class PhotoUpdate(UpdateView):
-    model = Photo
+# class PhotoUpdate(UpdateView):
+#     model = Photos
 
 
-class PhotoCreate(CreateView):
-    model = Photo
+# class PhotoCreate(CreateView):
+#     model = Photos
 
 
-class PhotoDelete(DeleteView):
-    model = Photo
-    success_url = reverse_lazy('photo-list')
+# class PhotoDelete(DeleteView):
+#     model = Photos
+#     success_url = reverse_lazy('photo-list')

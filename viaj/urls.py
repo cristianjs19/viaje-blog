@@ -19,7 +19,7 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 from viaj.views import home_page, nosotros, galeria, contacto, colabora
-from crea_post.views import viaje, post_ver
+from crea_post.views import viaje, post_ver, countryView, categoryView, subCategoryView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -27,6 +27,9 @@ urlpatterns = [
     url(r'^inicio/$', home_page, name= "inicio"),
     url(r'^nosotros/$', nosotros, name= "nosotros"),
     url(r'^viaje/$', viaje, name= "viaje"),
+    url(r'^country/(?P<pk>[0-9]+)/$', countryView, name= "country"),
+    url(r'^category/(?P<pk>[0-9]+)/$', categoryView, name= "category"),
+    url(r'^subcategory/(?P<pk>[0-9]+)/$', subCategoryView, name= "sub_category"),
     url(r'^post_ver/(?P<pk>[0-9]+)/$', post_ver, name= "post_ver"),
     # url(r'^galeria/$', galeria, name= "galeria"),
     url(r'^contacto/$', contacto, name= "contacto"),

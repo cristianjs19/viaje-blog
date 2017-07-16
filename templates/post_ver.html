@@ -13,6 +13,7 @@
     <div class="container">
       <div class="inside">
         <h2><a href="{% url "viaje" %}">Sección</a><span>Posts</span></h2>
+        <br><b>{{ category_header }}</b><br>
         <div class="post">
             {% if post.published_date %}
                 <div class="date">

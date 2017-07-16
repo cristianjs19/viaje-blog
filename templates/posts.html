@@ -1,0 +1,23 @@
+{% extends 'album/base1.html' %}
+{% load static %}
+
+
+
+{% block maincontent %}
+<div class="main-post">
+    <div class="content-post">
+    	{% if postSet %}
+            {% for post in postSet %}
+                <div><b>Post</b></div>
+                <div class="post" style="border: 1px solid; padding: 10px;">
+                  <h3><b>Title: </b><a href="/post_ver/{{ post.id }}/">{{ post.title }}</a></h3>
+                </div>
+            {% endfor %}
+        {% else %}
+        	<div class="post" style="border: 1px solid; padding: 10px;">
+              No posts available
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock maincontent %}

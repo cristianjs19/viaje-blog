@@ -1,0 +1,19 @@
+{% extends 'album/base1.html' %}
+{% load static %}
+
+
+
+{% block maincontent %}
+<div class="main-post">
+    <div class="content-post">
+        <div><center><b>Post Preview</b></center></div>
+        <div class="post" style="border: 1px solid; padding: 10px;">
+          <b>Title:</b> {{ post.title }}<br>
+          <b>Vprevia:</b> {{ post.vprevia }}<br>
+          <b>Created date:</b> {{ post.created_date}}<br>
+          <b>Author: </b> {{ post.author.username }}<br>
+          <b>text2: </b> {{ post.text2 }}<br>
+        </div>
+    </div>
+</div>
+{% endblock maincontent %}
