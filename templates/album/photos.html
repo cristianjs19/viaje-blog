@@ -1,16 +1,14 @@
-{% extends 'album/base1.html' %}
+{% extends 'album/base.html' %}
 {% load static %}
 
-
-
-{% block maincontent %}
+{% block content %}
 <div class="main-post">
     <div class="content-post">
         <table style="width:100%">
             <tr>
             {% for photo in photoSet %}
-                <td>
-                    <div class="gallery" style="border: 1px solid; padding: 10px; margin: 5px;">
+                <td class="post">
+                    <div class="gallery">
                         <p>Gallery Title: {{ photo.gallery.title }}</p>
                         <img src="{{ photo.photo.url }}" style="width:200px;height:200px"/>
                     </div>
@@ -20,4 +18,4 @@
         </table>
     </div>
 </div>
-{% endblock maincontent %}
+{% endblock content %}

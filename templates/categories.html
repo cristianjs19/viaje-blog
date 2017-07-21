@@ -1,22 +1,25 @@
-{% extends 'album/base1.html' %}
+{% extends 'album/base.html' %}
 {% load static %}
 
 
+{% block content %}
 
-{% block maincontent %}
 <div class="main-post">
     <div class="content-post">
         {% if categorySet %}
             {% for category in categorySet %}
-                <div class="post" style="border: 1px solid; padding: 10px;">
-                  <a href="/category/{{ category.id }}/"><p>{{ category.title }}</p><a>
+                <div class="post">
+                  <a href="/category/{{ category.id }}/"><p>{{ category.title }}</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div>
+                <i class="fa fa-map-marker fa-3x" aria-hidden="true"></i>
+              </div><a>
                 </div>
             {% endfor %}
         {% else %}
-            <div class="post" style="border: 1px solid; padding: 10px;">
+            <div class="post">
               No categories available
             </div>
         {% endif %}
     </div>
 </div>
-{% endblock maincontent %}
+
+{% endblock content %}

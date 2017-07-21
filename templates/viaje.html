@@ -11,20 +11,22 @@
 
   <!-- /#gallery -->
 
-<section>
+<!-- <section>
   <div class="map">
   <h2>Miren que bonito nuestro recorrido!!</h2><br><br><br>
     <div style="position: relative;margin: 5px 0 5px 0;padding-bottom: 56.25%;height: 0;clear: both;"><iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: 0;" src="https://www.tripline.net/map?tripId=67545501135510128648D8F2E9A3F38B&onSite=0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
   </div>
-</section>
+</section> -->
 
   <div class="main-post">
     
       <div class="content-post">
         <h2>Todos los POSTEOS <span>   Aquí:</span></h2>
          {% for country in countrySet %}
-            <div class="post" style="border: 1px solid; padding: 10px;">
-              <a href="/country/{{ country.id }}/"><p>{{ country.name }}</p><a>
+            <div class="post">
+              <a href="/country/{{ country.id }}/"><p>{{ country.name }}</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div>
+                <i class="fa fa-globe fa-3x" aria-hidden="true"></i>
+              </div><a>
             </div>
           {% endfor %}
       </div>

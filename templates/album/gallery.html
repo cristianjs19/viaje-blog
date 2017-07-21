@@ -1,19 +1,15 @@
-{% extends 'album/base1.html' %}
+{% extends 'album/base.html' %}
 {% load static %}
 
-
-{% block maincontent %}
-
+{% block content %}
 <div class="main-post">
     <div class="content-post">
         {% for gallery in gallerySet %}
-            <div class="gallery" style="border: 1px solid; padding: 10px;">
+            <div class="post gallery">
                 <p>Gallery Title: {{ gallery.title }}</p>
                 <a href="/album/gallery/{{ gallery.gallery_id }}/detail/"><img src="{{ gallery.lastPhoto }}" style="width:200px;height:200px"/></a>
             </div>
         {% endfor %}
     </div>
 </div>
-
-<script type="text/javascript"> Cufon.now(); </script>
-{% endblock maincontent %}
+{% endblock content %}

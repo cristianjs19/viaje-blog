@@ -1,20 +1,19 @@
-{% extends 'album/base1.html' %}
+{% extends 'album/base.html' %}
 {% load static %}
 
-
-{% block maincontent %}
-
+{% block content %}
 <div class="main-post">
     
       <div class="content-post">
          {% for category in categorySet %}
-            <div class="post" style="border: 1px solid; padding: 10px;">
-              <a href="/album/category/{{ category.id }}/"><p>{{ category.name }}</p><a>
+            <div class="post">
+              <a href="/album/category/{{ category.id }}/"><p>{{ category.name }}</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div>
+                <i class="fa fa-globe fa-3x" aria-hidden="true"></i>
+              </div><a>
             </div>
           {% endfor %}
       </div>
     
   </div>
 
-<script type="text/javascript"> Cufon.now(); </script>
-{% endblock maincontent %}
+{% endblock content %}
