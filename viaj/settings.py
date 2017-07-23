@@ -90,16 +90,16 @@ WSGI_APPLICATION = 'viaj.wsgi.application'
 
 #Postgresql custom DB config:
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'viaje1',
-        'USER': 'cristian',
-        'PASSWORD': 'cristian',
-        # 'HOST': 'localhost',
-        # 'PORT': 5432,
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'viaje1',
+#         'USER': 'cristian',
+#         'PASSWORD': 'cristian',
+#         'HOST': 'localhost',
+#         'PORT': 5432,
+#     }
+# }
 
 
 # DATABASES = {
@@ -168,8 +168,8 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
 
 # # Update database configuration with $DATABASE_URL.
-# db_from_env = dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(db_from_env)
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # AWS S3 MEDIA & STATIC configs:
 # https://github.com/codingforentrepreneurs/Guides/blob/master/all/s3_staticfiles_django.md
