@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = 'bet^9tforrk&!q@xa+5&xv#i^cb$hw7kyj+r9w3xs*%fg3pbgl'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -96,8 +96,8 @@ DATABASES = {
         'NAME': 'viaje1',
         'USER': 'cristian',
         'PASSWORD': 'cristian',
-        'HOST': 'localhost',
-        'PORT': 5432,
+        # 'HOST': 'localhost',
+        # 'PORT': 5432,
     }
 }
 
@@ -189,7 +189,7 @@ S3DIRECT_REGION = 'sa-east-1'
 S3_URL = '//%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_ROOT = MEDIA_URL
-# STATIC_URL = S3_URL + 'static/'
+STATIC_URL = S3_URL + 'static/'
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 import datetime
