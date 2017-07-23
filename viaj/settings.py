@@ -90,16 +90,16 @@ WSGI_APPLICATION = 'viaj.wsgi.application'
 
 #Postgresql custom DB config:
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'viaje1',
-#         'USER': 'cristian',
-#         'PASSWORD': 'cristian',
-#         'HOST': 'localhost',
-#         'PORT': 5432,
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'viaje1',
+        'USER': 'cristian',
+        'PASSWORD': 'cristian',
+        'HOST': 'localhost',
+        'PORT': 5432,
+    }
+}
 
 
 # DATABASES = {
