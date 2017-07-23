@@ -2,20 +2,29 @@
 {% load static %}
 
 {% block content %}
+<style type="text/css">
+  header nav ul li:nth-of-type(3) a {
+    padding-bottom:5px;
+}
+</style>
 <div class="main-post">
     <div class="content-post">
-        <table style="width:100%">
-            <tr>
+        <div class="photos">
             {% for photo in photoSet %}
-                <td class="post">
-                    <div class="gallery">
-                        <p>Gallery Title: {{ photo.gallery.title }}</p>
-                        <img src="{{ photo.photo.url }}" style="width:200px;height:200px"/>
+                
+                <div class="post1">
+                    <div class="gallery1">
+                        <div>
+                            <p>{{ photo.gallery.title }}</p>
+                        </div>
+                        
+                        <div>
+                            <img src="{{ photo.photo.url }}"/>
+                        </div>
                     </div>
-                </td>
+                </div>
             {% endfor %}
-            </tr>
-        </table>
+        </div>
     </div>
 </div>
 {% endblock content %}

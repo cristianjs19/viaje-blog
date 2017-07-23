@@ -2,16 +2,22 @@
 {% load static %}
 
 {% block content %}
-<div class="main-post">
-    <div class="content-post">
-        <div><center><b>Post Preview</b></center></div>
-        <div class="post" >
-          <b>Title:</b> {{ post.title }}<br>
-          <b>Vprevia:</b> {{ post.vprevia }}<br>
-          <b>Created date:</b> {{ post.created_date}}<br>
-          <b>Author: </b> {{ post.author.username }}<br>
-          <b>text2: </b> {{ post.text2 }}<br>
+
+<div class="main-post1">
+    <div class="content-post1">
+        <div class="post2" ><br>
+          <h1>
+            <b>{{ post.title }}</b><br><br>
+          </h1>
+          
+          <h4>
+            <b> {{ post.created_date}}</b><br><br>
+          </h4>
+          
+          <b>{{ post.text2|safe }}</b><br>
         </div>
     </div>
 </div>
 {% endblock content %}
+<b>Vprevia:</b> {{ post.vprevia }}<br>
+<b>Author: </b> {{ post.author.username }}<br>

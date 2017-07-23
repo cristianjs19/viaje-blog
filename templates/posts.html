@@ -2,15 +2,16 @@
 {% load static %}
 
 {% block content %}
+
 <div class="main-post">
     <div class="content-post">
         {% if postSet %}
             {% for post in postSet %}
-                <div><b>Post</b></div>
+                <div><b></b></div>
                 <div class="post">
-                  <h3><b>Title: </b><a href="/post_ver/{{ post.id }}/"><p>{{ post.title }}</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div>
+                  <a href="/post_ver/{{ post.id }}/"><p>{{ post.title }}</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div>
                 <i class="fa fa-bookmark-o fa-3x" aria-hidden="true"></i>
-              </div></a></h3>
+              </div></a>
                 </div>
             {% endfor %}
         {% else %}

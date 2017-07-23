@@ -4,24 +4,24 @@
 
 {% block content %}
 <style type="text/css">
-  header nav ul li:nth-of-type(3) a {
+  header nav ul li:nth-of-type(2) a {
     padding-bottom:5px;
 }
 </style>
 
   <!-- /#gallery -->
 
-<!-- <section>
+<section>
   <div class="map">
-  <h2>Miren que bonito nuestro recorrido!!</h2><br><br><br>
+  <h2>Trayecto recorrido hasta la fecha:</h2><br><br>
     <div style="position: relative;margin: 5px 0 5px 0;padding-bottom: 56.25%;height: 0;clear: both;"><iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: 0;" src="https://www.tripline.net/map?tripId=67545501135510128648D8F2E9A3F38B&onSite=0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
   </div>
-</section> -->
+</section>
 
   <div class="main-post">
     
       <div class="content-post">
-        <h2>Todos los POSTEOS <span>   Aquí:</span></h2>
+        <h2>Nuestro paso por:</h2>
          {% for country in countrySet %}
             <div class="post">
               <a href="/country/{{ country.id }}/"><p>{{ country.name }}</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div>
