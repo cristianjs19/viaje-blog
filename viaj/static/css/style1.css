@@ -1,12 +1,12 @@
 /*-----Globales-----*/
-	@font-face {
+	/*@font-face {
 	    font-family: 'Amatic';
 	    src:url('https://s3-sa-east-1.amazonaws.com/cjs19-bucket/static/css/Amatic-SC-Regular.ttf.woff') format('woff'),
 	        url('https://s3-sa-east-1.amazonaws.com/cjs19-bucket/static/css/Amatic-SC-Regular.ttf.svg#Amatic-SC-Regular') format('svg');
 	    	
 		font-weight: normal;
 	    font-style: normal;
-		}
+		}*/
 	* {
 		margin: 0;
 		padding: 0;
@@ -74,10 +74,10 @@
 	header h1{
 		float: left;
 		right: 15px;
-		font-family: 'Amatic'!important;
+		/*font-family: 'Amatic'!important;*/
 	}
 	header h1 a {
-		font-family: 'Amatic'!important;
+		/*font-family: 'Amatic'!important;*/
 		text-decoration: none;
 		font-size:1.3em;
 		line-height:60%;
