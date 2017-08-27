@@ -107,13 +107,13 @@
 			}
 				header nav ul li a {
 					font-size: 16px!important;
-					font-family: Georgia, serif!important;
+					font-family: 'Roboto', sans-serif;
 					color:#fff;
 					height:46px;
 					line-height:46px;
 					text-decoration:none;
 					width:4.7em;
-					font-weight:900!important;
+					font-weight:600;
 					/*border: 1px solid black;*/
 					text-align:center;
 					vertical-align: middle;
@@ -212,6 +212,7 @@
 		max-height: 500px;
 	}
 	footer{
+			font-family: 'Roboto', sans-serif;
 			clear: both;
 			padding:20px 0 22px 0;
 			border-top:5px solid #eee;
@@ -234,7 +235,7 @@
 		border-radius:4px;
 		-moz-border-radius:4px;
 		-webkit-border-radius:4px;*/
-		font-family: cursive;
+		font-family: 'Indie Flower', cursive;
 		font-weight: bold;
 		font-size: 1.2em;
 		font-style: oblique;
@@ -260,6 +261,7 @@
 	article h2 {
 		font-size: 1.7em;
 		margin-top: 10px;
+		font-family: 'Saira', sans-serif;
 	}
 	div .aside{
 		margin:0;
@@ -312,7 +314,7 @@
 	}
 /*-----El viaje-----*/
 	.map h2{
-		font-family: Georgia, serif!important;
+		font-family: 'Saira', sans-serif;
 		font-size: 24px;
 	}
 	/*.map{
@@ -332,6 +334,7 @@
 
 	}
 	.content-post h2{
+		font-family: 'Saira', sans-serif;
 		margin: 15px 0px;
 	}
 	.post{
@@ -364,10 +367,10 @@
 		transition: 0.6s;
 	}
 	.post a p{
+		font-family: 'Saira', sans-serif;
 		text-decoration: none;
 		font-size: 30px;
 		font-weight: 600;
-		font-family: cursive;
 		line-height: 45px;
 		/*top: 29px;*/
 	}
@@ -385,7 +388,6 @@
 		display: inline-flex;
 	}
 	.post p{
-		font-family: 'Amatic'!important;
 		text-decoration: none;
 		font-size: 33px;
 		font-weight: 800;
@@ -463,11 +465,10 @@
 
 		}
 	.post1 p{
-		font-family: 'Amatic'!important;
+		font-family: 'Roboto', sans-serif;
 		font-weight: 800;
 		text-decoration: none;
 		font-size: 32px;
-		font-family: cursive;
 		line-height: 65px;
 		/*top: 29px;*/
 	}
@@ -509,20 +510,16 @@
 		display: -o-flex;
 		display: flex;
 		justify-content: center;
-		/*flex-direction: column;*/
 	}
 	.container1{
 		width: 80%;
 		justify-content: center;
 	}
 	.title{
+		font-family: 'Saira', sans-serif;
 		margin: 45px 0px 10px;
 		clear: both;
 	}
-	/*div .aside1{
-		margin:0;
-		position: relative;
-	}*/
 	.aside1{
 		width: 100%;
 		position: relative;
@@ -566,6 +563,9 @@
 		vertical-align: top;
 		text-align: center;
 	}
+	.contact strong{
+		font-family: 'Roboto', sans-serif;
+	}
 	.contact:hover{
 		background: #FFBF80;
 	}
@@ -591,7 +591,11 @@
 		width: 80%;
 		justify-content: center;
 	}
+	.colabora-main h2{
+		font-family: 'Saira', sans-serif;
+	}
 	.colabora-main p{
+		font-family: 'Roboto', sans-serif;
 		font-size: 1.1em;
 		font-weight: 600;
 	}
@@ -779,6 +783,7 @@
 		.roundabout-moveable-item {
 		    width: 110%;
 		    height: 40%;
+		    max-width: 545px;
 		}
 		.roundabout-holder { 
 			width:85%;
